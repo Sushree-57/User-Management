@@ -52,7 +52,7 @@
 
 **Call http://localhost:8000/api/auth/register api in postman and prove details**
 
-**{ "fullName": "Rajat", "userName": "rajat@gmail.com", "password": "123456", // password atleast 6 digit "mobile":"9876543210" }**
+**{ "fullName": "Sushree", "userName": "ss@gmail.com", "password": "123456", // password atleast 6 digit "mobile":"7894561230" }**
 
 **Open a web browser and navigate to http://localhost:4200**
 
