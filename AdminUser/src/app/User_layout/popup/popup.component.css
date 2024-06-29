@@ -1,0 +1,33 @@
+.form-body {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-header h3 {
+  margin: 0;
+}
+
+.form-fields {
+  padding: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-icon {
+  font-size: 24px;
+  color: #333;
+}

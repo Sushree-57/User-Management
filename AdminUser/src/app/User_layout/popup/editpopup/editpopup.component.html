@@ -1,0 +1,51 @@
+<form [formGroup]="editform" (ngSubmit)="onedit()">
+  <mat-dialog-content class="form-body">
+    <div class="form-header">
+      <h3>User Information</h3>
+    </div>
+    <div class="form-fields">
+      <div class="form-field-container">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>User ID</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="user"/>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-field-container">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Full Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter Full Name"
+            formControlName="fullName"
+          />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-field-container">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Mobile</mat-label>
+          <input
+            matInput
+            placeholder="Enter Mobile No"
+            formControlName="mobile"
+          />
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button
+      mat-button
+      mat-dialog-close
+      mat-raised-button
+      (click)="closepopup()"
+      color="warn"
+    >
+      Close
+    </button>
+    <button type="submit" mat-raised-button color="accent">Save</button>
+  </mat-dialog-actions>
+  
+</form>

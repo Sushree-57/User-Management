@@ -1,0 +1,31 @@
+
+.status-online {
+    color: green;
+  }
+  .status-offline {
+    color: red;
+  }
+  .error
+  {
+    border: 2px solid red;
+  }
+  table
+  {
+    width: 100%;
+  }
+  .responsive-table {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  /* .edit-button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-button.mat-icon {
+    font-size: 18px;
+    margin-right: 10px;
+  } */

@@ -1,0 +1,151 @@
+<app-header></app-header>
+<div id="layoutSidenav_nav">
+  <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <div class="sb-sidenav-menu">
+      <div class="nav">
+        <div class="sb-sidenav-menu-heading">Core</div>
+        <a class="nav-link" href="#">
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          Dashboard
+        </a>
+      </div>
+    </div>
+    <div class="sb-sidenav-footer">
+      <div class="small">Logged in as:</div>
+      Admin
+    </div>
+  </nav>
+</div>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Dashboard</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Total User</div>
+            <div
+              class="card-footer d-flex align-items-center justify-content-between h4"
+            >
+              10
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Login User</div>
+            <div
+              class="card-footer d-flex align-items-center justify-content-between h4"
+            >
+              05
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Logout User</div>
+            <div
+              class="card-footer d-flex align-items-center justify-content-between h4"
+            >
+              05
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="d-flex justify-content-between px-4 py-2">
+          <div class="text-primary">
+            <i class="fas fa-table me-1"></i>
+            User Table
+          </div>
+          <div>
+            <button (click)="Openpopup()" mat-raised-button color="primary">
+              Add (+)
+            </button>
+          </div>
+        </div>
+        <hr class="m-0" />
+        <div class="responsive-table p-4">
+          <mat-form-field>
+            <mat-label> Filter </mat-label>
+            <input
+              matInput
+              placeholder="Filter"
+              (keyup)="filterChange($event)"
+            />
+          </mat-form-field>
+
+          <table mat-table matSort [dataSource]="userDataSource">
+            <ng-container matColumnDef="status">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef>Status</th>
+
+              <td mat-cell *matCellDef="let element">
+                @if(element.status ==="online"){
+                <span class="status-online"> online </span>
+                }@else{
+                <span class="status-offline"> offline </span>
+                }
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="userName">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef>User ID</th>
+              <td mat-cell *matCellDef="let element">{{ element.userName }}</td>
+            </ng-container>
+            <ng-container matColumnDef="password">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef>
+                Password
+              </th>
+              <td mat-cell *matCellDef="let element">{{ element.password }}</td>
+            </ng-container>
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef>
+                Full Name
+              </th>
+              <td mat-cell *matCellDef="let element">{{ element.fullName }}</td>
+            </ng-container>
+            <ng-container matColumnDef="mobile">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef>
+                Mobile No
+              </th>
+              <td mat-cell *matCellDef="let element">{{ element.mobile }}</td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let element">
+                <button
+                  (click)="Editpopup(element)"
+                  class="bg-primary text-white border border-primary px-2"
+                >
+                  <mat-icon>edit</mat-icon></button
+                >|
+                <button
+                  class="bg-danger border border-danger px-2 text-white"
+                  (click)="DeletePopup(element.id)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+
+          <mat-paginator
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons
+            aria-label="Select page of periodic elements"
+          >
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</div>
